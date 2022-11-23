@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=Racing+Sans+One&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    scroll-behavior: smooth;
+    transition: all 0.5s ease-in-out;
+}
+a { text-decoration: none;}
+
+h1, h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+h3,h4 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+body {
+    background-color: var(--dark);
+    min-height: 200vh;
+    color:var(--light);
+}
+.logo {
+    font-family: 'Racing Sans One' !important;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 80px;
+    z-index:100;
+}
+header.sticky{
+    padding: 5px 100px;
+    background-color: var(--white);
+}
+header.sticky ul li a{
+    color: var(--red);
+}
+
+header.sticky .start .logo {
+    color: var(--red);
+}
+
+
+header .start .logo{
+    position: relative;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Racing Sans One', cursive;
+    font-size: 2em;
+    letter-spacing: 2px;
+    transition:0.6s;
+}
+header .start i{
+    font-size: 20px;
+    padding:10px 12px;
+    margin-right: 5px;
+    background: var(--red);
+    border-radius: 50%;;
+    display:none;
+    
+}
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li {
+    position:relative;
+    list-style: none;
+}
+header ul li a {
+    position: relative;
+    margin: 0 10px;
+    padding:5px;
+    text-decoration: none;
+    color: var(--light);
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+header ul li a:hover {
+    color: var(--red2);
+}
+.scrollTop{
+    position: fixed;
+    top:50%;
+    transform: translateY(-30%);
+    left:20px;
+    z-index: 100;
+}
+.scrollTop .progress {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.scrollTop .progress #scrollPath{
+    position: absolute;
+    width: 1px;
+    height: 75px;
+    background-color: var(--light);
+    margin-top: 45px;
+}
+.scrollTop .progress #progressbar{
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background-color: white;
+    margin-top: 45px;
+    align-self: center;
+    top:100%;
+    z-index: 105;
+}
+.scrollTop a{
+    text-decoration: none;
+    color:var(--light);
+    position: relative;
+    display: inline-block;
+    transform: rotate(-90deg);
+}
+
+.pk-follow {
+    position: fixed;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+.pk-follow a{
+    text-decoration: none;
+    color: var(--white);
+}
+.pk-follow p{
+    position: relative;
+    transform: rotate(-90deg);
+    margin-top:30px;
+}
+
+
+section .banner {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    width: 100%;
+    height:100vh;
+    padding:100px 150px;
+    background: url(../images/heroBG.jpg);
+    background-position: center;
+    background-size: cover;
+
+
+
+}
+.banner .link {
+    align-self:flex-start;
+    margin-top:20px;
+    text-align: center;
+    font-size: 18px;
+    color:var(--light);
+    /* border-bottom: 1px solid var(--light); */
+    opacity: 0.5;
+    transition: opacity 0.5s;
+}
+.banner .link:hover {
+    opacity: 0.7;
+}
+section .featureProducts {
+    width:80%;
+    margin:auto;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 25px;
+}
+.featureProducts .card {
+    position: relative;
+    max-width: 600px; 
+    max-height: 600px;
+    overflow: hidden;
+    filter: drop-shadow(-4px 3px 8px #000);
+}
+.featureProducts .card img {
+    width:100%;
+    border-radius: 25px;
+    transition: 0.5s;
+}
+.featureProducts .card p {
+    position: absolute;
+    text-align: center;
+    letter-spacing: 2px;
+    color: var(--white);
+    font-size: 25px;
+    font-weight: 300;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left:50%;
+    opacity:0;
+    transition: 0.5s;
+    user-select: none;
+    pointer-events: none;
+}
+.featureProducts .card:hover img{
+    transform: scale(1.2);
+}
+.featureProducts .card img:hover {
+    filter: blur(2px) brightness(40%);
+    
+
+}
+.featureProducts .card:hover > p {
+    opacity: 1;
+    top:50%;
+    
+}
+.viewMore {
+    margin:20px auto 60px auto;
+    display: flex;
+    justify-content: center;
+}
+
+section .about {
+    padding: 100px 0;
+    width:80%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+}
+section .about .divider {
+    margin: 20px 0;
+    width:70%;
+    height: 1px;
+    background-color: var(--light);
+    opacity: 0.3;
+}
+section .about h4{
+    width:75%;
+}
+.contactUs .container {
+    width: 80%;
+    margin:auto;
+}
+.form   {
+    grid-area: form;
+}
+.info   {
+    grid-area: info;
+}
+.map   {
+    grid-area: map;
+}
+.contact {
+    padding: 40px;
+}
+.box {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 5fr 4fr;
+    grid-template-areas: 
+    "form info"
+    "form map";
+    grid-gap: 20px;
+}
+
+/* Contact form */
+.formBox {
+    position: relative;
+    width: 100%;
+}
+.formBox .row50 {
+    display: flex;
+    gap: 20px;
+}
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+    
+}
+.formBox .row100 .inputBox {
+    width: 100%;
+}
+.inputBox span {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.inputBox input, textarea {
+    padding: 10px;
+    font-size: 1.2em;
+    outline: 1px solid transparent;
+    border: none;
+    color: var(--white);
+    border-radius: 3px;
+    background: #2e2e2e;
+}
+.inputBox input::placeholder, textarea::placeholder {
+    color: #636262;
+}
+.inputBox input:focus, textarea:focus {
+    outline: 1px solid var(--red) !important;
+}
+.inputBox textarea {
+    resize: none;
+    min-height: 120px;
+    margin-bottom: 10px !important;
+}
+
+.inputBox input[type="submit"] {
+    margin-top:0;
+    background-color: var(--red);
+    max-width: 120px;
+    border: none;
+    text-align: center;
+    padding: 10px 15px 10px 10px;
+
+}
+.inputBox input[type="submit"]:hover {
+    background-color: var(--red2);
+}
+.info {
+padding:0;
+}
+.info .infoBox div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+.info .infoBox div span {
+    min-width: 40px;
+    height: 40px;
+    background-color: var(--dark3);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:  50%;
+    margin-right: 15px;
+}
+
+
+footer {
+    padding: 15px;
+    background-color: rgb(22, 22, 22);
+}
+footer div {
+    width: 90%;
+    display: flex;
+    margin:0 auto;
+}
+.footerBox div .link, .enquiry, .subscribe {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.footerBox .link ul li {
+    list-style: none;
+
+}
+.footerBox .link ul li a{
+    color: var(--white);
+    cursor: pointer;
+
+}
+.footerBox .link ul li a:hover{
+    color: var(--red);
+
+}
+.subscribe .form-subscribe {
+    margin:0;padding:0;
+}
+.subscribe .form-subscribe input {
+    margin: 0;
+    padding:8px;
+}
+.subscribe .form-subscribe input[type=mail]{
+    border: none;
+    color: var(--white);
+    background: #2e2e2e;
+}
+.subscribe .form-subscribe input[type=submit]{
+    border:none;
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.copywrite {
+    width: 100%;
+    margin-top:25px;
+    padding: 15px 35px;
+    text-align: center;
+}
+.copywrite p a{
+    color: var(--red);
+}
+
+
+
+
